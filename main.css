@@ -10,8 +10,10 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;  
-  background-color: #f5f5f5;
-  flex-direction: column;
+  background-image: url(img/ocean-child-shore-surf-walk-horizon-pastel-4k_1541115422.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;  flex-direction: column;
 }
 
 .sidebar{
