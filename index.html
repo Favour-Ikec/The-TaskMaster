@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo-List</title>
+
+    <link rel="stylesheet" href="main.css">
+
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Include jQuery UI -->
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+</head>
+
+
+
+<body>
+  <!-- SideBar & Hamburger Menu -->
+
+  <div class="hamburger-menu">
+    <i class="icon" id="hamburger">&#9776;</i> 
+  </div>
+
+    <div class="sidebar">
+      <div class="sidebar-menut">
+
+        <div class="hero-tag">
+          <i class="icon icon-profile"></i>
+          <span id="user-name">Daniel Bryan</span>
+          <span id="sync-status">Synced 1 minute ago</span>
+        </div>
+
+
+
+        <div class="inputed">
+          <i class="icon icon-search"></i>
+          <input type="text" placeholder="Search" id="search-input" class="input-nos">
+        </div>
+
+      
+        <div class="menu-item active">
+            <i class="icon icon-day"></i>
+            <span>My Day</span>
+        </div>
+
+        <div class="menu-item">
+          <i class="icon icon-important"></i>
+          <span>Important</span>
+        </div>
+
+        <div class="menu-item">
+          <i class="icon icon-planned"></i>
+          <span>Planned</span>
+      </div>
+
+      <div class="menu-item">
+        <i class="icon icon-all"></i>
+        <span>All</span>
+      </div>
+
+      <div class="menu-item">
+        <i class="icon icon-completed"></i>
+        <span>Completed</span>
+      </div>
+
+      <div class="menu-item">
+        <i class="icon icon-assigned"></i>
+        <span>Assigned to me</span>
+      </div>
+
+      <div class="menu-item">
+        <i class="icon icon-flagged"></i>
+        <span>Flagged email</span>
+      </div>
+
+      <div class="menu-item">
+        <i class="icon icon-tasks"></i>
+        <span>Tasks</span>
+      </div>        
+        
+      </div>
+    </div>  
+
+    <!-- SideBar && Hamburger Menu End -->
+
+
+    <!-- Container & Task-Attribute-List -Due-Date & Priority Selector-->
+
+  <div class="container">
+    <div class="todo-form">
+    
+      <input type="text" placeholder="Add a new task" id="todo-input" class="todo">
+
+      <button class="add-button" id="add-button">
+        Add
+      </button>
+    </div>
+
+    <!-- Task Attribute - DueDate - Priority- -->
+    <div class="task-attribute">
+      <!-- Use unique IDs -->
+      <button class="attribute-btn" id="duedate-btn" title="Set duedate">
+        <i class="icon-calendar"></i>
+      </button>
+      <!-- Remove inline styles that hide the input -->
+      <input type="text" id="duedate-input">
+    
+      <button class="attribute-btn" id="priority-btn" title="Set Priority">
+        <div>
+          <select id="priority-select" class="priority-select">
+            <option value="High">High</option>
+            <option value="Medium" selected>Medium</option>
+            <option value="Low">Low</option>
+          </select> 
+        </div>
+       
+    </button>
+    </div>
+
+    <!-- TasK-List/Input -->
+    <div class="task-input">
+      <ul class="task-list" id="task-list"></ul>
+    </div>  
+
+  </div>
+
+
+
+  <script src="main.js"></script>
+ 
+</body>
+</html>

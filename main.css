@@ -1,0 +1,531 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  background-image: url('img/ocean-child-shore-surf-walk-horizon-pastel-4k_1541115422.jpg') no-repeat center center fixed;
+  background-size: cover;
+  flex-direction: column;
+}
+
+.sidebar{
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #fffafa;
+  height: 100vh;
+  width: 200px;
+  overflow-y: auto;
+  border-right: 1px solid #ececec; 
+  z-index: 100;
+}
+
+.sidebar-menu{
+  padding-top: 20px;
+}
+
+.hero-tag{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #ececec;
+}
+
+.icon-profile:before {
+  content: '\1F464';
+  font-size: 30px;
+  color: #007bff;
+  padding-bottom: 10px;
+}
+
+#user-name{
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
+}
+
+#sync-status{
+  font-size: 14px;
+  font-weight: normal;
+  color: #666;
+  margin-top: 5px;
+}
+
+
+  .inputed{
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 5px 20px;
+  }
+
+  .input-nos{
+    flex: 1;
+    padding: 5px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    margin: 0 10px;
+    background-color: #fff;
+    font-size: 12px;
+    color: #333;
+  }
+
+  .input-nos::placeholder{
+    color: #999;
+    padding: 0 10px;
+  }
+
+  .icon-search:before { 
+    content: '\1F50D';
+    font-size: 20px;
+    color: #333;
+  }
+
+
+
+.menu-item{
+  padding: 10px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+
+.menu-item.active{
+  background-color: #f5f5f5;
+  color: #007bff;
+  border-left: 3px solid #007bff;
+}
+
+.menu-item:not(.active):hover{
+  background-color: #f9f9f9;
+}
+
+.menu-item i.icon{
+  margin-right: 10px;
+  font-size: 15px;
+  color: #333;
+}
+
+
+
+.icon-day:before { content: '\1F4C6'}
+.icon-important:before { content: '\1F4BC'}
+.icon-planned:before { content: '\1F4CD'}
+.icon-all:before { content: '\1F5C3'}
+.icon-completed:before { content: '\2714'}
+.icon-assigned:before { content: '\1F465'}
+.icon-flagged:before  { content: '\1F6A9'}
+.icon-tasks:before { content: '\1F4DD'}
+.icon-sun:before { content: '\263C'}
+.icon-due:before { content: '\1F4C5'}
+.icon-priority:before { content: '\2713'}
+.icon-calendar:before  { content: '\1F4C5'}
+.icon-priority:before { content: '\1F3AF'}
+.icon-priority:before { content: '\2714'}
+/* container */
+
+.container {
+  padding: 30px;
+  background-color: #fff;
+  width: 900px;/* Width should account for sidebar */
+  max-height: calc(100vh - 60px);
+  overflow-y: auto;
+  margin-left: 200px; /* Margin left should be the width of the sidebar */
+  margin-right: 0; /* Reset right margin */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  transition: margin-left 0.3s; /* Smooth transition for the margin */
+}
+
+.attribute-btn i.icon-calendar{
+  font-size: 16px;
+}
+
+ 
+.todo-form{
+  display: flex;
+  margin-bottom: 20px;
+
+}
+
+.todo{
+  flex: 1;
+  padding: 10px;
+  margin-right: 5px;
+  font-size: 15px;
+  border: none;
+}
+
+.add-button{
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 15px; 
+  transition: background-color 0.3s;
+  border: none;
+}
+
+.add-button:hover{
+  background-color: #555;
+}
+
+.add-button:active{
+  background-color: #333;
+}
+
+ul{
+  list-style: none;
+    padding: 0px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 0;
+ 
+}
+
+.task-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 10px 0;
+  margin-top: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.task-list li span{
+  flex: 1;
+  word-wrap: break-word;
+  margin-right: 10px;
+}
+
+.task-list li .priority-value {
+  flex: 0;
+  margin-right: auto;
+  margin-left: 20px;
+  white-space: nowrap;
+}
+
+.task-list li .due-date{
+  flex: 0;
+  margin-right: 20px;
+}
+
+.delete-button, .edit-button{
+  min-width: 80px;
+  white-space: nowrap;
+}
+
+.delete-button{
+  padding: 5px 10px;
+  background-color: #e74c3c;
+  border-radius: 3px;
+  border: none;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.delete-button:hover{
+  background-color: #c0392b;
+}
+
+.delete-button:active{
+  background-color: #e74c3c;
+}
+
+.edit-button{
+  background-color: #3498db;
+  color: #fff;
+  font-size: 15px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: none;
+  margin-right: 10px;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+}
+
+.edit-button:hover{
+  background-color: #2980b9;
+}
+
+.edit-button:active{
+  background-color: #3498db;
+}
+
+.edit-button{
+  padding: 5px 10px;
+}
+  
+/* side */
+
+/* DatePicker container */
+/* DatePicker container */
+.ui-datepicker {
+  width: auto;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Table structure */
+.ui-datepicker table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  margin: 0;
+  background-color: #f9f9f9;
+}
+
+/* Header */
+.ui-datepicker .ui-datepicker-header {
+  position: relative;
+  background: #f7f7f7;
+  border-bottom: 1px solid #eaeaea;
+  padding: 4px 0;
+}
+
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background-color: #e9e9e9;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.ui-datepicker .ui-datepicker-prev:hover, .ui-datepicker .ui-datepicker-next:hover {
+  background-color: #d9d9d9;
+}
+
+.ui-datepicker .ui-datepicker-prev {
+  left: 10px;
+}
+
+.ui-datepicker .ui-datepicker-next {
+  right: 10px;
+}
+
+.ui-datepicker .ui-icon {
+  text-indent: 0;
+}
+
+/* Days */
+.ui-datepicker th {
+  padding: 5px 0;
+  color: #666;
+  font-weight: bold;
+}
+
+.ui-datepicker td {
+  padding: 5px;
+  border: 1px solid #ddd;
+}
+
+/* Dates */
+.ui-datepicker .ui-state-default {
+  border-radius: 50%;
+  background: #fff;
+  color: #333;
+}
+
+.ui-datepicker .ui-state-hover {
+  background: #f0f0f0;
+}
+
+.ui-datepicker .ui-state-active, .ui-datepicker .ui-state-highlight {
+  background: #007bff;
+  color: #fff;
+}
+
+/* Today's date styling */
+.ui-datepicker .ui-datepicker-today .ui-state-highlight {
+  background: #059;
+  color: #fff;
+}
+
+#duedate-input {
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  position: absolute;
+  background-color: #fff;
+}
+
+#duedate-btn{
+  padding: 5px;
+  border: none;
+}
+
+.attribute-btn{
+  display: inline-block;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  padding: 5px 15px;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.attribute-btn > div::after {
+  content: '▼';
+  font-size: 12px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; /* This makes sure clicks go through to the select */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.attribute-btn > div{
+  margin-bottom: 10px;
+}
+
+
+.attribute-btn:hover {
+  border-color: #bbb;
+}
+
+
+.attribute-btn:focus-within {
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+
+#duedate-btn:active{
+  color: #070bff;
+}
+
+#duedate-btn:hover{
+  color: #070bff;
+}
+
+.due-date {
+  margin-left: 10px;
+  color: #333;
+}
+
+.task-list li .due-date{
+  font-weight: bold;
+}
+
+.hamburger-menu{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 101;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.icon{
+  font-size: 24px;
+  color: #333;
+}
+
+
+.sidebar.open {
+  left: 0;
+}
+
+.backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99; /* Behind the sidebar */
+}
+
+
+@media screen and (min-width: 360px) and (max-width: 970px) {
+  .sidebar {
+    left: -200px; /* Hide sidebar off-screen */
+    transition: left 0.3s; /* Smooth transition for sidebar */
+  }
+
+  .hamburger-menu {
+    display: block; /* Show hamburger menu icon on smaller screens */
+  }
+
+  .side{
+    position: fixed;
+    bottom: 100%;
+    right: 100%;
+    transition: right 0.3s;
+  }
+
+  .sandwich{
+    display: block;
+  }
+
+  .container{
+    padding: 30px;
+    background-color: #fff;
+    width: 100%; /* Width should account for sidebar */
+    margin: 0 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: margin-left 0.3s; /* Smooth transition for the margin */
+  }
+
+
+  
+}
+
+
+
+/* Priority - Button */
+.priority-select {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 5px 5px 5px 10px;
+  margin: 0; /* Reset the margin */
+  font-family: inherit; /* Inherit font from the button */
+  font-size: 16px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0; /* Hide the select but keep it functional */
+}
+
+.priority-select option {
+  padding: 10px;
+}
+
