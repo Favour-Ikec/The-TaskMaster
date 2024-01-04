@@ -230,7 +230,7 @@ ul{
 }
 
 .delete-button, .edit-button{
-  min-width: 80px;
+  min-width: 60px;
   white-space: nowrap;
   padding: 5px 10px;
 }
@@ -244,6 +244,8 @@ ul{
   font-size: 15px;
   cursor: pointer;
   transition: background-color 0.3s;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .delete-button:hover{
@@ -506,18 +508,48 @@ ul{
 
 
 @media screen and (max-width: 390px) {
-  .delete-button, .edit-button{
-    min-width: 10px;
-    padding: 5px;
-    font-size: 13px;
-    text-align: center;
+  .container {
+    width: 100%; /* Full width for small screens */
+    margin: 0; /* Reset margin */
+    padding: 20px; /* Adjust padding */
+    box-shadow: none; /* Optionally remove box-shadow for a flat design */
   }
 
-  .task-list li {
-    margin-left: -10px; /* Adjust as needed */
-  }
   
+  
+  .edit-button, .delete-button {
+    min-width: 20px;
+    width: auto; /* Adjust width to content */
+    padding: 5px 10px; /* Adjust padding */
+    margin: 5px 0; /* Add margin at top and bottom */
+    font-size: 13px; /* Adjust font size for readability */
+  }
+
+  /* Change the text for the edit and delete buttons on small screens */
+  .edit-button, .delete-button {
+    content: ''; /* Clear the default text */
+    display: block; /* Use block to take up the full width of the container */
+  }
+
+  .edit-button{
+    margin-right: 5px;
+  }
+
+  .edit-button::after {
+    content: 'E'; /* Abbreviation for 'Edit' */
+  }
+
+  .delete-button::after {
+    content: 'D'; /* Abbreviation for 'Delete' */
+  }
+
+  /* Hide the original text labels */
+  .edit-button span, .delete-button span {
+    display: none;
+  }
 }
+
+
 
 
 /* Priority - Button */

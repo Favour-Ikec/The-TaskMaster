@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", function () {
       <span class="priority-value">${task.priority}</span>
       <input type="text" name="text" class="edit-duedate-input" style="display: none">
       <span class="due-date">${task.dueDate}</span>
-      <button class="edit-button">Edit</button>
-      <button class="delete-button">Delete</button>
+      <button class="edit-button"><span>Edit</span></button>
+      <button class="delete-button"><span>Delete</span></button>
 
     `;
 
