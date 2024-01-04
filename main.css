@@ -139,6 +139,7 @@ body{
 .icon-calendar:before  { content: '\1F4C5'}
 .icon-priority:before { content: '\1F3AF'}
 .icon-priority:before { content: '\2714'}
+
 /* container */
 
 .container {
@@ -231,6 +232,7 @@ ul{
 .delete-button, .edit-button{
   min-width: 80px;
   white-space: nowrap;
+  padding: 5px 10px;
 }
 
 .delete-button{
@@ -498,12 +500,24 @@ ul{
     margin: 0 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: margin-left 0.3s; /* Smooth transition for the margin */
-  }
-
-
-  
+  }  
 }
 
+
+
+@media screen and (max-width: 390px) {
+  .delete-button, .edit-button{
+    min-width: 10px;
+    padding: 5px;
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .task-list li {
+    margin-left: -10px; /* Adjust as needed */
+  }
+  
+}
 
 
 /* Priority - Button */
@@ -529,4 +543,3 @@ ul{
 .priority-select option {
   padding: 10px;
 }
-

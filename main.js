@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <span class="due-date">${task.dueDate}</span>
       <button class="edit-button">Edit</button>
       <button class="delete-button">Delete</button>
+
     `;
 
     // Priority dropdown for editing
