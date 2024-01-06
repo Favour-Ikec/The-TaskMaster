@@ -82,9 +82,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // Backdrop setup
   backdrop.classList.add("backdrop");
   document.body.appendChild(backdrop);
+  
   backdrop.addEventListener("click", function () {
     sidebar.classList.remove("open");
-    backdrop.style.display = "none";
+    this.style.display = "none";
   });
 
   // Due date picker initialization
@@ -116,12 +117,15 @@ document.addEventListener("DOMContentLoaded", function () {
   // Function to create priority dropdown for editing
   function createPriorityDropdown(currentPriority) {
     const select = document.createElement("select");
+  
     select.id = "select-priority" + Math.random().toString(36).substr(2, 9);
+
     select.innerHTML = `
       <option value="High" ${currentPriority === "High" ? "selected" : ""}>High</option>
       <option value="Medium" ${currentPriority === "Medium" ? "selected" : ""}>Medium</option>
       <option value="Low" ${currentPriority === "Low" ? "selected" : ""}>Low</option>
     `;
+    
     select.className = "edit-priority-select";
     select.style.display = "none";
     return select;
