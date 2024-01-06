@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const listItem = createTaskElement(newTask);
       taskList.appendChild(listItem);
       todoInput.value = "";
-      dueDateInput.setAttribute('data-date', '');
+      dueDateInput.setAttribute('data-date', 1);
       prioritySelect.selectedIndex = 1; // Reset to default (Medium)
       saveTasks(); // Save new task
     }
